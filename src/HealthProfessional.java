@@ -64,6 +64,27 @@ public class HealthProfessional {
             }
         }
 
-        System.out.println();
+        System.out.println();    
     }
+
+    /**
+     * Returns the health professional's information as readable text.
+     *
+     * @return the professional's details
+     */
+    public String toString() {
+        String days = "";
+
+        for (int i = 0; i < availableDays.length; i++) {
+            days += availableDays[i];
+
+            if (i < availableDays.length - 1) {
+                days += ", ";
+            }
+        }
+
+        return "Health Professional ID: " + id
+                + "\nName: " + name
+                + "\nAvailable days: " + days;
+}
 }

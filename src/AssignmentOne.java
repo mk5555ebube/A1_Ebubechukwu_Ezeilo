@@ -20,15 +20,15 @@ public class AssignmentOne {
         HealthProfessional hp3 =
                 new HealthProfessional(1003, "Emily Brown", days3);
 
-        hp1.displayDetails();
-
+        System.out.println(hp1);
         System.out.println();
 
-        hp2.displayDetails();
-
+        System.out.println(hp2);
         System.out.println();
 
-        hp3.displayDetails();
+        System.out.println(hp3);
+
+
     }
 
 }
