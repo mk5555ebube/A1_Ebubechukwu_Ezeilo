@@ -1,5 +1,34 @@
 public class AssignmentOne {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+    public static void main(String[] args) {
+
+        System.out.println("PROG2004 Assessment 1");
+        System.out.println("Health Service Appointment System");
+
+    
+
+        String[] days1 = {"Monday", "Wednesday", "Friday"};
+        String[] days2 = {"Tuesday", "Thursday"};
+        String[] days3 = {"Monday", "Tuesday", "Friday"};
+
+        HealthProfessional hp1 =
+                new HealthProfessional(1001, "Ebube Williams", days1);
+
+        HealthProfessional hp2 =
+                new HealthProfessional(1002, "John Smith", days2);
+
+        HealthProfessional hp3 =
+                new HealthProfessional(1003, "Emily Brown", days3);
+
+        hp1.displayDetails();
+
+        System.out.println();
+
+        hp2.displayDetails();
+
+        System.out.println();
+
+        hp3.displayDetails();
     }
+
 }
