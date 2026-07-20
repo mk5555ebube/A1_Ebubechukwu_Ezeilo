@@ -27,7 +27,11 @@ public class AssignmentOne {
         System.out.println();
 
         System.out.println(hp3);
+    HealthProfessional hp4 =
+        new HealthProfessional(1004, "Jane Eze");
 
+System.out.println();
+System.out.println(hp4);
 
     }
 

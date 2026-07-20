@@ -21,6 +21,10 @@ public class HealthProfessional {
         this.availableDays = availableDays;
     }
 
+    public HealthProfessional(int id, String name) {
+    this(id, name, new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
+    }
+
     /**
      * Returns the professional's ID.
      *
