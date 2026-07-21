@@ -8,30 +8,37 @@ public class AssignmentOne {
     
 
         String[] days1 = {"Monday", "Wednesday", "Friday"};
-        String[] days2 = {"Tuesday", "Thursday"};
-        String[] days3 = {"Monday", "Tuesday", "Friday"};
+String[] days2 = {"Tuesday", "Thursday"};
+String[] days3 = {"Monday", "Tuesday", "Friday"};
 
-        HealthProfessional hp1 =
-                new HealthProfessional(1001, "Ebube Williams", days1);
+GeneralPractitioner gp1 =
+        new GeneralPractitioner(
+                1001,
+                "Ebube Williams",
+                days1,
+                "Broadbeach Medical Centre");
 
-        HealthProfessional hp2 =
-                new HealthProfessional(1002, "John Smith", days2);
+GeneralPractitioner gp2 =
+        new GeneralPractitioner(
+                1002,
+                "John Smith",
+                days2,
+                "Gold Coast Family Clinic");
 
-        HealthProfessional hp3 =
-                new HealthProfessional(1003, "Emily Brown", days3);
+GeneralPractitioner gp3 =
+        new GeneralPractitioner(
+                1003,
+                "Emily Brown",
+                days3,
+                "Robina Health Centre");
 
-        System.out.println(hp1);
-        System.out.println();
-
-        System.out.println(hp2);
-        System.out.println();
-
-        System.out.println(hp3);
-    HealthProfessional hp4 =
-        new HealthProfessional(1004, "Jane Eze");
-
+System.out.println(gp1);
 System.out.println();
-System.out.println(hp4);
+
+System.out.println(gp2);
+System.out.println();
+
+System.out.println(gp3);
 
     }
 

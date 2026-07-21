@@ -1,7 +1,7 @@
 /**
  * Represents a general health professional working at the health service.
  */
-public class HealthProfessional {
+public abstract class HealthProfessional {
 
     // Information shared by every health professional
     private int id;
@@ -73,7 +73,6 @@ public class HealthProfessional {
 
     /**
      * Returns the health professional's information as readable text.
-     *
      * @return the professional's details
      */
     public String toString() {
