@@ -1,16 +1,12 @@
-/**
- * Represents a general health professional working at the health service.
- */
+/*Represents a general health professional working at the health service.*/
 public abstract class HealthProfessional {
 
-    // Information shared by every health professional
+    // these wii be the Information shared by every health professional
     private int id;
     private String name;
     private String[] availableDays;
 
-    /**
-     * Creates a health professional with an ID, name and working days.
-     *
+    /**Creates a health professional with an ID, name and working days.
      * @param id the professional's numeric ID
      * @param name the professional's name
      * @param availableDays the days the professional is available
