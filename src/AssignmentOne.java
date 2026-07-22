@@ -12,14 +12,14 @@ public class AssignmentOne {
     String[] days3 = {"Monday", "Tuesday", "Friday"};
     String[] days4 = {"Wednesday", "Thursday"};
 
-GeneralPractitioner gp1 =
+        GeneralPractitioner gp1 =
     new GeneralPractitioner(
         1001,
         "Ebube Williams",
             days1,
          "Broadbeach Medical Centre");
 
-GeneralPractitioner gp2 =
+        GeneralPractitioner gp2 =
 new GeneralPractitioner(
      1002,
          "John Smith",
@@ -48,6 +48,27 @@ Physiotherapist physiotherapist1 =
                 "Sports Injury Rehabilitation");
                 System.out.println();
 
+Appointment appointment1 =
+        new Appointment(
+                "Daniel White",
+                "0412345678",
+                "09:30 AM",
+                gp1);
+
+Appointment appointment2 =
+        new Appointment(
+                "Sarah Brown",
+                "0423456789",
+                "11:00 AM",
+                dentist1);
+
+Appointment appointment3 =
+        new Appointment(
+                "Michael Lee",
+                "0434567890",
+                "2:30 PM",
+                pharmacist1);                
+
 System.out.println(gp1);
 System.out.println();
 
@@ -61,6 +82,17 @@ System.out.println(dentist1);
 System.out.println();
 
 System.out.println(physiotherapist1);
+
+System.out.println("\nAPPOINTMENT DETAILS");
+System.out.println("--------------------");
+
+System.out.println(appointment1);
+System.out.println();
+
+System.out.println(appointment2);
+System.out.println();
+
+System.out.println(appointment3);
 
     }
 

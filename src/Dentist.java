@@ -21,8 +21,9 @@ public class Dentist extends HealthProfessional {
     /*Returns the dentist details.*/
     @Override
     public String toString() {
-        return "Type: Dentist"
-                + "\n" + super.toString()
+        return """
+               Type: Dentist
+               """ + super.toString()
                 + "\nClinic: " + clinicName;
     }
 }

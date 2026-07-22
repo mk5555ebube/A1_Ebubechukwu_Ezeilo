@@ -1,13 +1,9 @@
-/**
- * Represents a general practitioner.
- */
-public class GeneralPractitioner extends HealthProfessional {
+/*Represents a general practitioner.*/
+ class GeneralPractitioner extends HealthProfessional {
 
     private String clinicName;
 
-    /**
-     * Creates a general practitioner.
-     *
+    /**Creates a general practitioner.
      * @param id the professional's numeric ID
      * @param name the professional's name
      * @param availableDays the days the professional is available
@@ -23,18 +19,14 @@ public class GeneralPractitioner extends HealthProfessional {
         this.clinicName = clinicName;
     }
 
-    /**
-     * Returns the clinic name.
-     *
+    /** Returns the clinic name.
      * @return the clinic name
      */
     public String getClinicName() {
         return clinicName;
     }
 
-    /**
-     * Returns the GP's details as readable text.
-     *
+    /**Returns the GP's details as readable text.
      * @return the GP's details
      */
     @Override
