@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class AssignmentOne {
 
     public static void main(String[] args) {
@@ -71,7 +73,6 @@ Appointment appointment3 =
 
 System.out.println(gp1);
 System.out.println();
-
 System.out.println(gp2);
 System.out.println();
 
@@ -83,16 +84,18 @@ System.out.println();
 
 System.out.println(physiotherapist1);
 
+ArrayList<Appointment> appointments = new ArrayList<>();
+
+appointments.add(appointment1);
+appointments.add(appointment2);
+appointments.add(appointment3);
+
 System.out.println("\nAPPOINTMENT DETAILS");
-System.out.println("--------------------");
 
-System.out.println(appointment1);
-System.out.println();
-
-System.out.println(appointment2);
-System.out.println();
-
-System.out.println(appointment3);
+for (Appointment appointment : appointments) {
+    System.out.println(appointment);
+    System.out.println();
+}
 
     }
 

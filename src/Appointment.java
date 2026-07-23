@@ -7,12 +7,7 @@ public class Appointment {
     private String appointmentTime;
     private HealthProfessional healthProfessional;
 
-    /**Creates an appointment.
-     * @param patientName the patient's name
-     * @param patientMobile the patient's mobile number
-     * @param appointmentTime the appointment time
-     * @param healthProfessional the selected health professional
-     */
+    /**Creates an appointment.*/
     public Appointment(
                 String patientName,
                 String patientMobile,
