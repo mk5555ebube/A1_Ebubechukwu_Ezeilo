@@ -1,4 +1,6 @@
 /*Represents a general health professional working at the health service.*/
+import java.util.Objects;
+
 public abstract class HealthProfessional {
 
     // these wii be the Information shared by every health professional
@@ -21,10 +23,7 @@ public abstract class HealthProfessional {
     this(id, name, new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"});
     }
 
-    /**
-     * Returns the professional's ID.
-     *
-     * @return the professional ID
+    /**Returns the professional's ID. @return the professional ID
      */
     public int getId() {
         return id;
@@ -86,4 +85,26 @@ public abstract class HealthProfessional {
                 + "\nName: " + name
                 + "\nAvailable days: " + days;
 }
+
+@Override
+public boolean equals(Object object) {
+
+    if (this == object) {
+        return true;
+    }
+
+    if (object == null || getClass() != object.getClass()) {
+        return false;
+    }
+
+    HealthProfessional other = (HealthProfessional) object;
+
+    return id == other.id;
+}
+
+@Override
+public int hashCode() {
+    return Objects.hash(id);
+}
+
 }

@@ -105,11 +105,7 @@ bookAppointment("Sarah Brown", "0423456789", "11:00", dentist1);
 
 bookAppointment("Michael Lee", "0434567890", "14:30", pharmacist1);
 
-bookAppointment(
-        "Test Patient",
-        "0400000000",
-        "10:15",
-        gp2);
+bookAppointment("Test Patient","0400000000","10:15",gp2);
 
 System.out.println("\nAPPOINTMENT DETAILS");
 
