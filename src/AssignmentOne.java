@@ -106,6 +106,11 @@ bookAppointment("Sarah Brown", "0423456789", "11:00", dentist1);
 bookAppointment("Michael Lee", "0434567890", "14:30", pharmacist1);
 
 bookAppointment("Test Patient","0400000000","10:15",gp2);
+bookAppointment(
+        "Another Patient",
+        "0499999999",
+        "09:30",
+        gp1);
 
 System.out.println("\nAPPOINTMENT DETAILS");
 
@@ -135,6 +140,25 @@ for (Appointment appointment : appointments) {
     System.out.println("Warning: " + appointmentTime
             + " is not a valid appointment time.");
     return;
+}
+
+for (Appointment appointment : appointments) {
+
+    boolean sameProfessional =
+            appointment.getHealthProfessional().equals(healthProfessional);
+
+    boolean sameTime =
+            appointment.getAppointmentTime().equals(appointmentTime);
+
+    if (sameProfessional && sameTime) {
+
+        System.out.println(
+                "Warning: This health professional is already booked at "
+                        + appointmentTime + ".");
+
+        return;
+    }
+
 }
 
     Appointment newAppointment = new Appointment(
