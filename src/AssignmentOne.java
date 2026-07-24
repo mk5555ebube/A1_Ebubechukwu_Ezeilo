@@ -106,11 +106,7 @@ bookAppointment("Sarah Brown", "0423456789", "11:00", dentist1);
 bookAppointment("Michael Lee", "0434567890", "14:30", pharmacist1);
 
 bookAppointment("Test Patient","0400000000","10:15",gp2);
-bookAppointment(
-        "Another Patient",
-        "0499999999",
-        "09:30",
-        gp1);
+
 
 System.out.println("\nAPPOINTMENT DETAILS");
 
@@ -118,6 +114,14 @@ for (Appointment appointment : appointments) {
     System.out.println(appointment);
     System.out.println();
 }
+
+viewAppointmentsByProfessionalId(1001);
+
+viewAppointmentsByProfessionalId(4001);
+
+viewAppointmentsByPatientPhone("0412345678");
+viewAppointmentsByPatientPhone("0499999999");
+
     }
  public static void bookAppointment(
         String patientName,
@@ -134,7 +138,7 @@ for (Appointment appointment : appointments) {
                 + "All required information must be provided.");
         return;
         
-    }
+    }  
 
     if (!isValidTimeSlot(appointmentTime)) {
     System.out.println("Warning: " + appointmentTime
@@ -171,6 +175,60 @@ for (Appointment appointment : appointments) {
 
     System.out.println("Appointment successfully booked for "
             + patientName + ".");
+}
+
+public static void viewAppointmentsByPatientPhone(
+        String patientMobile) {
+
+    boolean appointmentFound = false;
+
+    System.out.println(
+            "\nAPPOINTMENTS FOR PATIENT PHONE "
+                    + patientMobile);
+
+    for (Appointment appointment : appointments) {
+
+        if (appointment.getPatientMobile().equals(patientMobile)) {
+
+            System.out.println(appointment);
+            System.out.println();
+
+            appointmentFound = true;
+        }
+    }
+
+    if (!appointmentFound) {
+        System.out.println(
+                "Warning: No appointments were found for patient phone "
+                        + patientMobile + ".");
+    }
+}
+
+public static void viewAppointmentsByProfessionalId(int professionalId) {
+
+    boolean appointmentFound = false;
+
+    System.out.println(
+            "\nAPPOINTMENTS FOR HEALTH PROFESSIONAL ID "
+                    + professionalId);
+
+    for (Appointment appointment : appointments) {
+
+        int appointmentProfessionalId =
+                appointment.getHealthProfessional().getId();
+
+        if (appointmentProfessionalId == professionalId) {
+            System.out.println(appointment);
+            System.out.println();
+            appointmentFound = true;
+        }
+    }
+
+    if (!appointmentFound) {
+        System.out.println(
+                "Warning: No appointments were found for health professional ID "
+                        + professionalId + ".");
+    }
 }
 
 public static boolean isValidTimeSlot(String appointmentTime) {
