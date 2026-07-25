@@ -72,19 +72,20 @@ Appointment appointment1 =
                 "09:30",
                 gp1);
 
-Appointment appointment2 =
-        new Appointment(
-                "Sarah Brown",
-                "0423456789",
-                "11:00",
-                dentist1);
 
 Appointment appointment3 =
         new Appointment(
                 "Michael Lee",
                 "0434567890",
                 "14:30",
-                pharmacist1);                
+                pharmacist1);     
+                
+                Appointment appointment2 =
+        new Appointment(
+                "Sarah Brown",
+                "0423456789",
+                "11:00",
+                dentist1);
 
 System.out.println(gp1);
 System.out.println();
@@ -99,14 +100,16 @@ System.out.println();
 
 System.out.println(physiotherapist1);
 
-bookAppointment("Daniel White", "0412345678", "09:30", gp1);
-
+// Test booking appointments & booking appointments setting *//
 bookAppointment("Sarah Brown", "0423456789", "11:00", dentist1);
 
-bookAppointment("Michael Lee", "0434567890", "14:30", pharmacist1);
+bookAppointment("Daniel White", "0412345678", "09:30", gp1);
 
 bookAppointment("Test Patient","0400000000","10:15",gp2);
 
+bookAppointment("Michael Lee", "0434567890", "14:30", pharmacist1);
+
+sortAppointmentsByTime(appointments);
 
 System.out.println("\nAPPOINTMENT DETAILS");
 
@@ -115,11 +118,13 @@ for (Appointment appointment : appointments) {
     System.out.println();
 }
 
+// Test viewing appointments by professional ID and patient phone*//
 viewAppointmentsByProfessionalId(1001);
 
 viewAppointmentsByProfessionalId(4001);
 
 viewAppointmentsByPatientPhone("0412345678");
+
 viewAppointmentsByPatientPhone("0499999999");
 
     }
@@ -228,6 +233,26 @@ public static void viewAppointmentsByProfessionalId(int professionalId) {
         System.out.println(
                 "Warning: No appointments were found for health professional ID "
                         + professionalId + ".");
+    }
+}
+
+public static void sortAppointmentsByTime(
+        ArrayList<Appointment> appointmentList) {
+
+    for (int i = 0; i < appointmentList.size() - 1; i++) {
+
+        for (int j = 0; j < appointmentList.size() - 1 - i; j++) {
+
+            Appointment currentAppointment = appointmentList.get(j);
+            Appointment nextAppointment = appointmentList.get(j + 1);
+
+            if (currentAppointment.getAppointmentTime()
+                    .compareTo(nextAppointment.getAppointmentTime()) > 0) {
+
+                appointmentList.set(j, nextAppointment);
+                appointmentList.set(j + 1, currentAppointment);
+            }
+        }
     }
 }
 
