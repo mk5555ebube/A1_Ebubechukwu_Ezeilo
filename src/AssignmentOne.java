@@ -127,6 +127,13 @@ viewAppointmentsByPatientPhone("0412345678");
 
 viewAppointmentsByPatientPhone("0499999999");
 
+// Test cancelling appointments by professional ID and appointment time*//
+cancelAppointmentByProfessional(1001, "09:30");
+
+// Test cancelling appointments by patient phone*//
+cancelAppointmentByPatientPhone("0423456789");
+cancelAppointmentByPatientPhone("0499999999");
+
     }
  public static void bookAppointment(
         String patientName,
@@ -254,6 +261,78 @@ public static void sortAppointmentsByTime(
             }
         }
     }
+}
+
+public static void cancelAppointmentByProfessional(
+        int professionalId,
+        String appointmentTime) {
+
+    for (int i = 0; i < appointments.size(); i++) {
+
+        Appointment appointment = appointments.get(i);
+
+        boolean sameProfessional =
+                appointment.getHealthProfessional().getId()
+                        == professionalId;
+
+        boolean sameTime =
+                appointment.getAppointmentTime()
+                        .equals(appointmentTime);
+
+        if (sameProfessional && sameTime) {
+
+            appointments.remove(i);
+
+            System.out.println(
+                    "Appointment successfully cancelled for health professional ID "
+                            + professionalId
+                            + " at "
+                            + appointmentTime
+                            + ".");
+
+            return;
+        }
+    }
+
+System.out.println("\nAPPOINTMENTS AFTER CANCELLATION");
+
+for (Appointment appointment : appointments) {
+    System.out.println(appointment);
+    System.out.println();
+}
+
+    System.out.println(
+            "Warning: No appointment was found for health professional ID "
+                    + professionalId
+                    + " at "
+                    + appointmentTime
+                    + ".");
+}
+
+public static void cancelAppointmentByPatientPhone(
+        String patientMobile) {
+
+    for (int i = 0; i < appointments.size(); i++) {
+
+        Appointment appointment = appointments.get(i);
+
+        if (appointment.getPatientMobile().equals(patientMobile)) {
+
+            appointments.remove(i);
+
+            System.out.println(
+                    "Appointment successfully cancelled for patient phone "
+                            + patientMobile
+                            + ".");
+
+            return;
+        }
+    }
+
+    System.out.println(
+            "Warning: No appointment was found for patient phone "
+                    + patientMobile
+                    + ".");
 }
 
 public static boolean isValidTimeSlot(String appointmentTime) {
