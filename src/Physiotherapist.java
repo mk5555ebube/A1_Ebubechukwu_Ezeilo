@@ -1,29 +1,29 @@
-/*Represents a physiotherapist.*/
+//Represents a physiotherapist.
 public class Physiotherapist extends HealthProfessional {
 
-    private String treatmentType;
+    private String clinicName;
 
-    /**
-     * Creates a physiotherapist.
-     */
-    public Physiotherapist(int id, String name,
-                           String[] availableDays,
-                           String treatmentType) {
+    //Creates a physiotherapist.
+    public Physiotherapist(
+            int id,
+            String name,
+            String[] availableDays,
+            String clinicName) {
 
         super(id, name, availableDays);
-        this.treatmentType = treatmentType;
+        this.clinicName = clinicName;
     }
 
-    /*Returns the treatment type.*/
-    public String getTreatmentType() {
-        return treatmentType;
+    //Returns the clinic name.
+    public String getClinicName() {
+        return clinicName;
     }
 
-    /*Returns the physiotherapist details.*/
+    //Returns the physiotherapist's details as readable text.
     @Override
     public String toString() {
-        return "Type: Physiotherapist"
-                + "\n" + super.toString()
-                + "\nTreatment Type: " + treatmentType;
+        return "Type: Physiotherapist" + "\n"
+                + super.toString() + "\nClinic: "
+                + clinicName;
     }
 }

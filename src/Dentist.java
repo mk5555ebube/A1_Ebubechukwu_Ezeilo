@@ -1,29 +1,29 @@
-/*Represents a dentist*/
+//Represents a dentist
 public class Dentist extends HealthProfessional {
 
     private String clinicName;
 
-    /*Creates a dentist.*/
-    public Dentist(int id, String name,
-                   String[] availableDays,
-                   String clinicName) {
+    //Creates a dentist.
+    public Dentist(
+            int id,
+            String name,
+            String[] availableDays,
+            String clinicName) {
 
         super(id, name, availableDays);
         this.clinicName = clinicName;
     }
 
-    /**
-     * Returns the clinic name.*/
+    //Returns the clinic name.
     public String getClinicName() {
         return clinicName;
     }
 
-    /*Returns the dentist details.*/
+    // Returns the dentist's details as readable text.
     @Override
     public String toString() {
-        return """
-               Type: Dentist
-               """ + super.toString()
-                + "\nClinic: " + clinicName;
+        return "Type: Dentist" + "\n"
+                + super.toString()
+                + "\nClinic: "+ clinicName;
     }
 }

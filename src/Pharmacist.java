@@ -1,29 +1,29 @@
-/**
- * Represents a pharmacist.
- */
+//Represents a pharmacist.
 public class Pharmacist extends HealthProfessional {
 
-    private String storeName;
+    private String pharmacyName;
 
-    /*Creates a pharmacist*/
-    public Pharmacist(int id, String name,
-                      String[] availableDays,
-                      String storeName) {
+    //Creates a pharmacist.
+    public Pharmacist(
+            int id,
+            String name,
+            String[] availableDays,
+            String pharmacyName) {
 
         super(id, name, availableDays);
-        this.storeName = storeName;
+        this.pharmacyName = pharmacyName;
     }
 
-    /*Returns the pharmacy name.*/
-    public String getStoreName() {
-        return storeName;
+    //Returns the pharmacy name.
+    public String getPharmacyName() {
+        return pharmacyName;
     }
 
-    /*Returns the pharmacist details.*/
+    // the pharmacist's details as readable text.
     @Override
     public String toString() {
-        return "Type: Pharmacist"
-                + "\n" + super.toString()
-                + "\nStore: " + storeName;
+        return "Type: Pharmacist" + "\n"
+                + super.toString() + "\nPharmacy: "
+                + pharmacyName;
     }
 }

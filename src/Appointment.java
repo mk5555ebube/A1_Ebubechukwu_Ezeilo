@@ -1,5 +1,4 @@
-/**Represents an appointment between a patient and a health professional.
- */
+//Appointment class.
 public class Appointment {
 
     private String patientName;
@@ -7,36 +6,40 @@ public class Appointment {
     private String appointmentTime;
     private HealthProfessional healthProfessional;
 
-    /**Creates an appointment.*/
+    //Constructor for an appointment.
     public Appointment(
-                String patientName,
-                String patientMobile,
-                String appointmentTime,
-                HealthProfessional healthProfessional) {
+            String patientName,
+            String patientMobile,
+            String appointmentTime,
+            HealthProfessional healthProfessional) {
 
-            this.patientName = patientName;
-            this.patientMobile = patientMobile;
-            this.appointmentTime = appointmentTime;
-            this.healthProfessional = healthProfessional;
-        }
+        this.patientName = patientName;
+        this.patientMobile = patientMobile;
+        this.appointmentTime = appointmentTime;
+        this.healthProfessional = healthProfessional;
+    }
 
+    // Gets the patient's name.
     public String getPatientName() {
         return patientName;
     }
 
+    // Gets the patient's mobile number.
     public String getPatientMobile() {
         return patientMobile;
     }
-    
+
+    // Gets the appointment time.
     public String getAppointmentTime() {
         return appointmentTime;
     }
 
+    // Gets the health professional.
     public HealthProfessional getHealthProfessional() {
         return healthProfessional;
     }
 
-    //**Returns the appointment details as readable text. 
+    //Displays appointment details.
     @Override
     public String toString() {
         return "Appointment Time: " + appointmentTime
